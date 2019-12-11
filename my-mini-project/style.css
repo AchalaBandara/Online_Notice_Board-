@@ -11,31 +11,84 @@ body{
 }
 
 .navbar{
-	background-color:#03580A;
+	background-color:#F0F7F0;
 	font-size:1.1em;
 	
 }
 
 .navbar-default .navbar-brand {
-	color:#D5D5D5;
+	color:#5FCF80;
 }
 
 .navbar-default .navbar-nav li a{
-	color:#D5D5D5;
+	color:#717f86;
 } 
 
 .navbar-default .navbar-nav li a:hover,
 .navbar-default .navbar-nav li a.active{
-	color:#fff;
+	color:#717f86;
 } 
 
-#banner{
-	font-family:sans-serif;
-	padding-top:100px;
-	background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("images/image1.jpg") no-repeat center center;
-	background-attachment: fixed;
-    background-size: cover; 
+.banner{
+	background: url('images/banner.jpg') no-repeat center top;
+    background-size: cover;
+	min-height: 400px;
+    position: relative;
 }
+.bg-color{
+	background-color: RGBA(12, 11, 11, 0.82);
+	min-height: 400px;
+}
+.text-dec{
+	font-size: 24px;
+	padding: 10px 20px;
+    margin: 15px 0;
+	text-transform: uppercase;
+    color: #fff;
+}
+.text-border{
+	border: 5px solid #5FCF80;
+	display: inline-block;
+	margin-top: 150px;
+}
+.intro-para{
+	font-family: 'Alegreya Sans', sans-serif;
+	font-size: 45px;
+	color: #fff;
+	margin-top: 30px;
+}
+.quote .btn{
+    background-color:
+}
+
+
+
+.modal-content h4 {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+.login-box-body {
+    padding: 15px 30px;
+}
+.login-box-msg, .register-box-msg {
+    margin: 0px;
+    text-align: center;
+    padding: 0px 20px 20px;
+}
+.modal-sm {
+    width: 400px;
+}
+.padleft-right{
+    padding-left: 5px;
+    padding-right: 0px;
+}
+.big-text{
+    font-size: 35px;
+}
+.small-text{
+    font-size: 16px;
+}
+
 
 .landing-text{
 	margin-top:80px;
@@ -53,21 +106,5 @@ body{
 }
 
 
-.promo-title{
-	font-size:20px;
-	margin-top:5px;
-}
-
-.panel-default{
-	background-color:#D5D5D5;
-}
-
-.panel-heading{
-	background-color:#fff;
-	margin-top:0;
-	text-align:center;
-	font-size:15px;
-	
-}
 
 
