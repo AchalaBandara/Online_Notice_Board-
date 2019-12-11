@@ -1,148 +1,209 @@
-<?php 
-session_start();
-include('../connection.php');
-$admin= $_SESSION['admin'];
-if($admin=="")
-{
-header('location:login.php');
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
-
-    <title>Online Notice Board Admin Dashboard</title>
-	
-	<link rel="stylesheet" href="style.css">
-
-    <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="../css/dashboard.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../js/ie-emulation-modes-warning.js"></script>
-
-    
-  </head>
-
-  <body>
-
-    
-
-    <div class="container-fluid">
-      <div class="wrapper">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-		  <h2>admin</h2>
-            
-	    
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale-1">
+		<title>Welcome to Online Notice Board</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="style.css">
 		
-			<li><a href="index.php?page=update_password"> Update Password</a></li>
-            <li><a href="index.php?page=add_notice">Add New Notices</a></li>
-			 <li><a href="index.php?page=notices"> Manage Notices</a></li>
-            <li><a href="index.php?page=logout">Logout</a></li>
-			
-          </ul>
-         
-         
-        </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <!-- container-->
-		  <?php 
-		@$page=  $_GET['page'];
-		  if($page!="")
-		  {
-		  				
-			if($page=="update_password")
-			{
-				include('update_password.php');
-			
-			}
-			
-			if($page=="notices")
-			{
-				include('manage_notices.php');
-			
-			}
-			
-			if($page=="update_notice")
-			{
-				include('update_notice.php');
-			
-			}
-			
-			
-			
-			if($page=="add_notice")
-			{
-				include('add_notice.php');
-			
-			}
-			
-			if($page=="logout")
-			{
-				include('logout.php');
-			
-			}
-			
-		  }
-		  
-		  else
-		  {
-		  ?>
-		  <!-- container end-->
-		  
-		  
+	</head>
+<body>
+
+<section id="nav-bar">
+<nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="index.html">ONLINE NOTICE <span>BOARD</span></a>			
+		</div>
+		<div class="collapse navbar-collapse" id="navbar-collapse-main">
+			<ul class="nav navbar-nav navbar-left">
+				<li><a class="active" href="#"><b>Home</b></a></li>
+				<li><a href="#"><b>About Us</b></a></li>
+				<li><a href="Contact/index.html"><b>Contact Us</b></a></li>
+				<li><a href="View_Notices/index.php"><b>View Notices</b></a></li></ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="admin/login.php" data-toggle="modal"><b>Login</b></a></li>
+			</ul>
 		
-		  
-		  <h1 class="page-header">DASHBOARD</h1>
-		  
+		</div>
 		
-          <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="image/image2.png" width="200" height="200" class="img-responsive" >
-              <h4>Add New Notice</h4>
-              
+	</div>
+
+</nav>
+</section>
+
+
+
+
+<div class="banner">
+    <div class="bg-color">
+      <div class="container">
+        <div class="row">
+          <div class="banner-text text-center">
+            <div class="text-border">
+              <h2 class="text-dec">ONLINE NOTICE BOARD</h2>
             </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="image/image1.png" width="200" height="200" class="img-responsive" >
-              <h4>Manage Notices</h4>
+            <div class="intro-para text-center quote">
+              <p class="big-text">Faculty of Applied Sciences</p>
+              <p class="small-text">Sabaragamuwa University of Sri Lanaka</p>
               
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="image/image3.png" width="200" height="200" class="img-responsive" >
-              <h4>Update Password</h4>             
             </div>
             
           </div>
-		  
-		  <?php } ?>
-		  
-
-         
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../js/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../js/vendor/holder.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../js/ie10-viewport-bug-workaround.js"></script>
-  </body>
+
+
+
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                        <div class="page-wrapper">
+                            <div class="blog-top clearfix">
+                                <h4 class="pull-left"><b>Recent News</b> <a href="#"><i class="fa fa-rss"></i></a></h4>
+                            </div><!-- end blog-top -->
+
+                            <div class="blog-list clearfix">
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="tech-single.html" title="">
+                                                <img src="images/download.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <h4><a href="#" title="">Convocation 2019</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>                                        
+                                        <small><a href="#" title="">19 December, 2019</a></small>
+                                        
+                                       
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+
+                                <hr class="invis">
+
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="tech-single.html" title="">
+                                                <img src="images/images.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <h4><a href="#" title="">Codenight Hackathon 2019</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                       
+                                        <small><a href="#" title="">28 November, 2019</a></small>
+                                        
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+
+                                <hr class="invis">
+
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="tech-single.html" title="">
+                                                <img src="upload/tech_blog_03.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <h4><a href="#" title="">Fortnight Meetup</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                        
+                                        <small><a href="#" title="">20 November, 2019</a></small>
+                                        
+                                    </div><!-- end meta -->								
+																	
+                                </div><!-- end blog-box -->
+                                <hr class="invis">									
+								                                                                             								
+                            </div><!-- end col -->                  
+									
+					
+                </div><!-- end row -->			
+								
+            </div><!-- end container -->
+			
+			<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sidebar">
+                            
+                            <div class="widget">
+                                <h4 class="widget-title"><b>Upcoming Events</b></h4>
+                                <div class="blog-list-widget">
+                                    <div class="list-group">
+                                        <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                            <div class="w-100 justify-content-between">
+                                                
+                                                <h5 class="mb-1">Let Me Hack Hackathon.</h5>
+                                                <small>12 Jan, 2020</small>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                            <div class="w-100 justify-content-between">
+                                                
+                                                <h5 class="mb-1">Virthual Rival Gaming Competition 2020.</h5>
+                                                <small>11 Feb, 2020</small>
+                                            </div>
+                                        </a>
+
+                                        <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                            <div class="w-100 last-item justify-content-between">
+                                                
+                                                <h5 class="mb-1">Pirimbihini Diyawara 2019.</h5>
+                                                <small>07 Dec, 2019</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div><!-- end blog-list -->
+                            </div><!-- end widget -->
+
+                            
+                            
+
+                            <div class="widget">
+                                <div class="banner-spot clearfix">
+                                    <div class="banner-img">
+                                        <img src="upload/banner_03.jpg" alt="" class="img-fluid">
+                                    </div><!-- end banner-img -->
+                                </div><!-- end banner -->
+                            </div><!-- end widget -->
+                        </div><!-- end sidebar -->
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+			
+        </section>
+
+
+          
+
+
+
+	   <script src="js/cdnAjax.js"></script>
+	   <script src="js/cdn.js"></script>
+</body>
 </html>
+
