@@ -17,9 +17,9 @@ echo "<h2 style='color:red'>No any Notices found !!!</h2>";
 else
 {
 ?>
-<h2 style="color:#00FFCC">All Notice</h2>
+<h2 style="color:#00FFCC"><b>ALL NOTICES</b></h2>
 
-<table class="table table-bordered">
+<table class="table table-bordered" style="margin-top:70px">
 	
 	<Tr class="success">
 		<th>Sr.No</th>
