@@ -1,3 +1,8 @@
+<?php 
+session_start();
+include('../connection.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -39,11 +44,12 @@
             
 	    
 		
-			<li><a href="#">Computing and Information systems</a></li>
-            <li><a href="#">Physical Sciences and Technologies</a></li>
-			 <li><a href="#">Food Science and technology</a></li>
-            <li><a href="#">Natural Resourses</a></li>
-			<li><a href="#">Sport Science and Physical Education</a></li>
+			<li><a href="index.php?page=Computing and Information Systems">Computing and Information systems</a></li>
+      <li><a href="index.php?page=Physical Sciences and Technologies">Physical Sciences and Technologies</a></li>
+			<li><a href="index.php?page=Food Science and Technology">Food Science and Technology</a></li>
+      <li><a href="index.php?page=Natural Resourses">Natural Resourses</a></li>
+			<li><a href="index.php?page=Sport Science and Physical Education">Sport Science and Physical Education</a></li>
+			<li><a href="index.php?page=logout">Logout</a></li>
 			
           </ul>
          
@@ -51,6 +57,58 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           
+		  <!-- container-->
+		  <?php 
+		@$page=  $_GET['page'];
+		  if($page!="")
+		  {
+		  				
+			if($page=="Computing and Information Systems")
+			{
+				include('cis.php');
+			
+			}
+			
+			if($page=="Physical Sciences and Technologies")
+			{
+				include('pst.php');
+			
+			}
+			
+			if($page=="Food Science and Technology")
+			{
+				include('fst.php');
+			
+			}
+			
+			
+			
+			if($page=="Natural Resourses")
+			{
+				include('nr.php');
+			
+			}
+			
+			if($page=="Sport Science and Physical Education")
+			{
+				include('sp.php');
+			
+			}
+			
+			if($page=="logout")
+			{
+				include('logout.php');
+			
+			}
+			
+		  }
+		  
+		  else
+		  {
+		  ?>
+		  <!-- container end-->
+		  
+		  
 		  
 		  
 		
@@ -87,7 +145,7 @@
             </div>
           </div>
 		  
-		  
+		   <?php } ?>
 		  
 
          
