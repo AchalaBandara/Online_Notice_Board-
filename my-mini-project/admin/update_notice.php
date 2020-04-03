@@ -13,7 +13,7 @@ $q=mysqli_query($conn,"select * from notice where notice_id='".$_GET['notice_id'
 $res=mysqli_fetch_array($q);
 
 ?>
-<h2>Update Notice</h2>
+<h2><b><font color='green'>UPDATE NOTICE</font></b></h2>
 <form method="post">
 	
 	<div class="row">
@@ -23,7 +23,7 @@ $res=mysqli_fetch_array($q);
 	
 	
 	
-	<div class="row">
+	<div class="row" style="margin-top:70px">
 		<div class="col-sm-4">Enter Subject</div>
 		<div class="col-sm-5">
 		<input type="text" name="sub" value="<?php echo $res['subject']; ?>" class="form-control"/></div>
@@ -32,7 +32,7 @@ $res=mysqli_fetch_array($q);
 	
 	<div class="row" style="margin-top:10px">
 		<div class="col-sm-2"></div>
-		<div class="col-sm-8">
+		<div class="col-sm-8"></div>
 	</div>	
 	
 	<div class="row">
@@ -44,21 +44,19 @@ $res=mysqli_fetch_array($q);
 	
 	<div class="row" style="margin-top:10px">
 		<div class="col-sm-2"></div>
-		<div class="col-sm-8">
+		<div class="col-sm-8"></div>
 	</div>	
 	
 	<div class="row">
-		<div class="col-sm-4">Select User</div>
+		<div class="col-sm-4">Select Department</div>
 		<div class="col-sm-5">
-		<select name="user[]" multiple="multiple" class="form-control">
-			<?php 
-	$sql=mysqli_query($conn,"select name,email from user");
-	while($r=mysqli_fetch_array($sql))
-	{
-		echo "<option value='".$r['email']."'>".$r['name']."</option>";
-	}
-			?>
-		</select>
+		<select name="department" multiple="multiple" class=form-control>
+  <option value="<?php echo $res['department']; ?>">Computing and Information Systems</option>
+  <option value="<?php echo $res['department']; ?>">Physical Sciences and Technologies</option>
+  <option value="<?php echo $res['department']; ?>">Food Science and Technology</option>
+  <option value="<?php echo $res['department']; ?>">Natural Resources</option>
+  <option value="<?php echo $res['department']; ?>">Sport Science and Physical Education</option>
+</select>
 		</div>
 	</div>
 	
