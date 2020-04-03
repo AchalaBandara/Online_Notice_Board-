@@ -1,7 +1,7 @@
 <script>
 	function DeleteNotice(id)
 	{
-		if(confirm("You want to delete this record ?"))
+		if(confirm("Do you want to delete this notice ?"))
 		{
 		window.location.href="delete_notice.php?id="+id;
 		}
@@ -12,12 +12,12 @@ $q=mysqli_query($conn,"select * from notice ");
 $rr=mysqli_num_rows($q);
 if(!$rr)
 {
-echo "<h2 style='color:red'>No any Notices found !!!</h2>";
+echo "<h2 style='color:red'>No any Notices found !</h2>";
 }
 else
 {
 ?>
-<h2 style="color:#00FFCC"><b>ALL NOTICES</b></h2>
+<h2 style="color:green"><b>ALL NOTICES</b></h2>
 
 <table class="table table-bordered" style="margin-top:70px">
 	
@@ -25,7 +25,7 @@ else
 		<th>Sr.No</th>
 		<th>Subject</th>
 		<th>Details</th>
-		<th>User</th>
+		<th>Department</th>
 		<th>Date</th>
 		<th>Delete</th>
 		<th>Update</th>
@@ -41,7 +41,7 @@ echo "<Tr>";
 echo "<td>".$i."</td>";
 echo "<td>".$row['subject']."</td>";
 echo "<td>".$row['Description']."</td>";
-echo "<td>".$row['email']."</td>";
+echo "<td>".$row['department']."</td>";
 echo "<td>".$row['Date']."</td>";
 
 ?>
