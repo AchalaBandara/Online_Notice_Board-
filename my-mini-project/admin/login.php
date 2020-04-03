@@ -4,7 +4,10 @@
 	extract($_POST);
 	if(isset($login))
 	{
+		
 		$que=mysqli_query($conn,"select * from admin where email='$email' and pass='$pass'");
+		
+		
 		$row=mysqli_num_rows($que);
 		if($row)
 			{	
@@ -13,6 +16,8 @@
 			}
 		else
 			{
+				
+				
 				$err="<font color='red'>Wrong Email or Password !</font>";
 			}
 	}
@@ -85,6 +90,9 @@
             </div>
         </div>
     </div>
+	
+	
+	
 
     <!-- jQuery -->
     <script src="../css/css/jquery.min.js"></script>
