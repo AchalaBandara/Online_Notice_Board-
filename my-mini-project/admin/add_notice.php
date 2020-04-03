@@ -5,7 +5,7 @@ if(isset($add))
 
 	if($details=="" || $sub=="" || $department=="")
 	{
-	$err="<font color='red'>fill all the fileds first</font>";	
+	$err="<font color='red'>Fill all the fileds first</font>";	
 	}
 	else
 	{
@@ -59,6 +59,7 @@ mysqli_query($conn,"insert into notice values('','$v','$sub','$details',now())")
 		<div class="col-sm-4">Select Department</div>
 		<div class="col-sm-5">
 		<select name="department[]" multiple="multiple" class="form-control">
+		
 		
   <option value="C">Computing and Information Systems</option>
   <option value="P">Physical Sciences and Technologies</option>
