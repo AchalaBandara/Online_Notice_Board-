@@ -21,11 +21,11 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="index.html">ONLINE NOTICE <span>BOARD</span></a>			
+			<a class="navbar-brand" href="index.php">ONLINE NOTICE <span>BOARD</span></a>			
 		</div>
 		<div class="collapse navbar-collapse" id="navbar-collapse-main">
 			<ul class="nav navbar-nav navbar-left">
-				<li><a class="active" href="#"><b>Home</b></a></li>
+				
 				<li><a href="#"><b>About Us</b></a></li>
 				<li><a href="Contact/index.html"><b>Contact Us</b></a></li>
 				<li><a href="View_Notices/index.php"><b>View Notices</b></a></li></ul>
@@ -197,7 +197,15 @@
 			
         </section>
 
-
+<footer class="footer">
+        <div class="container-fluid padding bg-light">
+            <div class="row text-center">
+                <div class="col-12 pt-3">
+                    <p>&copy; 2020 Online_Notice_Board</p>
+                </div>
+            </div>
+        </div>
+    </footer>
           
 
 
